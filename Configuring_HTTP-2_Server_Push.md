@@ -19,7 +19,10 @@ Then you will have to add the http2_push_preload directive with the proxy_pass o
 
     fastcgi_pass php7;
     http2_push_preload on;
-Then reload Nginx using – nginx -t && nginx -s reload
+    
+Then reload Nginx using 
+
+    – nginx -t && nginx -s reload
 
 #####Verification
 For WordPress site, you can install this plugin – HTTP/2 Server Push. To verify the setup, you need the nghttp tool. On Ubuntu, the package containing this tool is nghttp2

@@ -20,10 +20,12 @@ We are using following format, which is also default nginx format named “combi
 ###### Lets explore some commands which can help us analyse logs.
 
 #######Sort access by Response Codes
+
     cd /var/log/nginx/
     cat access.log | cut -d '"' -f3 | cut -d ' ' -f2 | sort | uniq -c | sort -rn
 
 #######Sample Output:
+
      111997 301
       79147 403
       64039 200
@@ -38,9 +40,11 @@ We are using following format, which is also default nginx format named “combi
           2 206
 
 ####### Same thing can be done using awk:
+
     awk '{print $9}' access.log | sort | uniq -c | sort -rn
 
 #######Sample Output:
+
      112407 301
       79290 403
       68766 200
@@ -82,6 +86,7 @@ Similarly, for 502 (bad-gateway) we can run following command:
     awk '($9 ~ /404/)' access.log | awk -F\" '($2 ~ "^GET .*\.php")' | awk '{print $7}' | sort | uniq -c | sort -r | head -n 20
  
  ######sample result
+ 
        3 /en_cz/wp-login.php
        1 /en_cz/thinkphp/html/public/index.php
        1 /en_cz/public/index.php
@@ -93,6 +98,7 @@ Similarly, for 502 (bad-gateway) we can run following command:
        1 /cs_cz/extranet/index2.php
  
  #####Most requested URLs
+ 
     awk -F\" '{print $2}' access.log | awk '{print $2}' | sort | uniq -c | sort -r
   
  #####Most requested URLs containing XYZ

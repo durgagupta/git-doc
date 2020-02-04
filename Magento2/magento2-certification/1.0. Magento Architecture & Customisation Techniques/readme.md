@@ -45,13 +45,13 @@ Example:
 
 ---
 > What are the different Composer package types?
-
-| Name | Package Type | Description |
-| :--: | :----------: | :---------- |
-| Metapackage | metapackage | Technically, a Composer package type, not a Magento component type. A metapackage consists of only a `composer.json` file that specifies a list of components and their dependencies. For example, both Magento Open Source and Magento Commerce are metapackages. |
-| Module | magento2-module | Code that modifies Magento application behavior. You can upload a single module to the Magento Marketplace or your module can be dependent on some parent package. |
-| Theme | magento2-theme | Code that modifies the look and feel of the storefront or Magento Admin. |
-| Language Package | magento2-language | Translations for the storefront or Admin. |
+    
+    | Name | Package Type | Description |
+    | :--: | :----------: | :---------- |
+    | Metapackage | metapackage | Technically, a Composer package type, not a Magento component type. A metapackage consists of only a `composer.json` file that specifies a list of components and their dependencies. For example, both Magento Open Source and Magento Commerce are metapackages. |
+    | Module | magento2-module | Code that modifies Magento application behavior. You can upload a single module to the Magento Marketplace or your module can be dependent on some parent package. |
+    | Theme | magento2-theme | Code that modifies the look and feel of the storefront or Magento Admin. |
+    | Language Package | magento2-language | Translations for the storefront or Admin. |
 
 ---
 > When would you place a module in the app/code folder versus another location?

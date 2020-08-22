@@ -4,21 +4,21 @@
     }
     server {
         listen 80;
-        server_name www.myhostname.com;
+        server_name www.magento24.com;
         set $MAGE_ROOT /var/www/html/magento;
 
     #geoIP header 
     set_real_ip_from 192.168.2.20/32; # Ip/network of the reverse proxy (or ip received into REMOTE_ADDR)
     real_ip_header X-Forwarded-For;
 
-        include /etc/nginx/conf.d/nginx.conf.magento;
+        include /etc/nginx/conf.d/nginx.conf.magento24;
         error_log /var/log/nginx/myhostname.error.log;
         access_log /var/log/nginx/myhostname.access.log ;
     }
 
 
 
-# Example configuration: /etc/nginx/conf.d/nginx.conf.magento
+# Example configuration: /etc/nginx/conf.d/nginx.conf.magento24
     # upstream fastcgi_backend {
     #    # use tcp connection
     #    # server  127.0.0.1:9000;

@@ -27,6 +27,23 @@ To add the CentOS 7 EPEL repository, open terminal and use the following command
 
     sudo yum install epel-release
 
+Now that the Nginx repository is installed on your server, install Nginx using the following yum command:
+
+    sudo yum install nginx
+
+After you answer yes to the prompt, Nginx will finish installing on your virtual private server (VPS).
+
+Nginx does not start on its own. To get Nginx running, type:
+
+    sudo systemctl start nginx
+
+If you are running a firewall, run the following commands to allow HTTP and HTTPS traffic:
+
+    sudo firewall-cmd --permanent --zone=public --add-service=http 
+    sudo firewall-cmd --permanent --zone=public --add-service=https
+    sudo firewall-cmd --reload
+
+
 ## Remove php-fpm if alrady installed
 
     sudo systemctl stop php-fpm

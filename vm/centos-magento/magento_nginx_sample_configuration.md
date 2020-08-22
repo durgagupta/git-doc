@@ -1,19 +1,19 @@
-# Example configuration: magengo.conf
+# Example configuration: /etc/nginx/conf.d/magengo24.conf
     upstream fastcgi_backend {
         server   unix:/var/run/php-fpm/php-fpm.sock;
     }
     server {
         listen 80;
         server_name www.magento24.com;
-        set $MAGE_ROOT /var/www/html/magento;
+        set $MAGE_ROOT /var/www/html/magento24;
 
     #geoIP header 
     set_real_ip_from 192.168.2.20/32; # Ip/network of the reverse proxy (or ip received into REMOTE_ADDR)
     real_ip_header X-Forwarded-For;
 
         include /etc/nginx/conf.d/nginx.conf.magento24;
-        error_log /var/log/nginx/myhostname.error.log;
-        access_log /var/log/nginx/myhostname.access.log ;
+        error_log /var/log/nginx/magento24.error.log;
+        access_log /var/log/nginx/magento24.access.log ;
     }
 
 

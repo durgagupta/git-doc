@@ -1,0 +1,4 @@
+###What are Virtual Types?
+Within Magento 2, classes can depend on each other using constructor-based Dependency Injection. And instead of only allowing static dependencies (class A injects class B), Magento offers a configuration system that allows one dependency to be replaced with another (class B is swapped out for class C). One of these configurations is Virtual Types.
+
+Virtual Types are defined in a file di.xml which might be located in numerous places - for instance, the etc/ folder of your own module. Virtual Types are in essence new PHP classes (but actually they are not, they are just links), that extend upon their original class while overriding the original class its constructor arguments by adding those in the di.xml file.
